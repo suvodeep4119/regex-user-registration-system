@@ -8,9 +8,11 @@ shopt -s extglob
 #Our input
 read -p "Enter first name: " firstName
 read -p "Enter last name: " lastName
+read -p "Enter email: " email
 #To match
-regexFirstName="^[A-Z]{1}[a-z]{2,}"
-regexLastName="[A-Z]{1}[a-z]{2,}$"
+regexFirstName="^[A-Z]{1}[a-z]{2,}$"
+regexLastName="^[A-Z]{1}[a-z]{2,}$"
+regexEmail="[a-z]{"
 
 
 if [[ $firstName =~ $regexFirstName ]]
