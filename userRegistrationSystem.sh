@@ -9,11 +9,12 @@ shopt -s extglob
 read -p "Enter first name: " firstName
 read -p "Enter last name: " lastName
 read -p "Enter email: " email
+read -p "Enter mobile number: " mobileNumber
 #To match
 regexFirstName="^[A-Z]{1}[a-z]{2,}$"
 regexLastName="^[A-Z]{1}[a-z]{2,}$"
 regexEmail="^[a-z]{3,}[.]{1}[a-z]{3,}[@]{1}[a-z]{2,}[.]{1}[a-z]{2,}[.]{1}[a-z]{2}$"
-
+regexMobileNumber="^[0-9]{2}[ ]{1}[0-9]{10}$"
 
 if [[ $firstName =~ $regexFirstName ]]
 then
@@ -34,4 +35,11 @@ then
 	echo "Valid email"
 else
 	echo "Invalid email"
+fi
+
+if [[ $mobileNumber =~ $regexMobileNumber ]]
+then
+	echo "Valid mobile number"
+else
+	echo "Invalid mobile number"
 fi
