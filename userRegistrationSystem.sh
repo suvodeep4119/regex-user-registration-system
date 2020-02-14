@@ -7,13 +7,22 @@ shopt -s extglob
 
 #Our input
 read -p "Enter first name: " firstName
+read -p "Enter last name: " lastName
 #To match
-regexFirstName="^[A-Z]{1}[a-z]{2,}$"
+regexFirstName="^[A-Z]{1}[a-z]{2,}"
+regexLastName="[A-Z]{1}[a-z]{2,}$"
+
 
 if [[ $firstName =~ $regexFirstName ]]
 then
-	echo "Valid"
+	echo "Valid first name"
 else
-	echo "Invalid"
+	echo "Invalid first name"
 fi
 
+if [[ $lastName =~ $regexLastName ]]
+then
+	echo "Valid last name"
+else
+	echo "Invalid last name"
+fi
