@@ -6,11 +6,11 @@ echo "Welcome to REGEX USER REGISTRATION SYSTEM"
 shopt -s extglob
 
 #Our input
-read -p "Enter first name: " userInput
+read -p "Enter first name: " firstName
 #To match
-regex="^[A-Z]{1}[a-z]{2,}$"
+regexFirstName="^[A-Z]{1}[a-z]{2,}$"
 
-if [[ $userInput =~ $regex ]]
+if [[ $firstName =~ $regexFirstName ]]
 then
 	echo "Valid"
 else
